@@ -1,0 +1,121 @@
+:root {
+  /* primary */
+  --primary-100: oklch(0.945 0.045 200);
+  --primary-200: oklch(0.905 0.075 200);
+  --primary-300: oklch(0.865 0.09 200);
+  --primary-400: oklch(0.79 0.115 200);
+  --primary-500: oklch(0.7 0.16 200);
+  --primary-600: oklch(0.62 0.135 200);
+  --primary-700: oklch(0.5 0.1 200);
+  --primary-800: oklch(0.4 0.085 200);
+  --primary-900: oklch(0.32 0.075 200);
+
+  /* pass */
+  --pass-100: oklch(0.945 0.045 169);
+  --pass-200: oklch(0.905 0.075 169);
+  --pass-300: oklch(0.865 0.09 169);
+  --pass-400: oklch(0.79 0.115 169);
+  --pass-500: oklch(0.7 0.135 169);
+  --pass-600: oklch(0.59 0.125 169);
+  --pass-700: oklch(0.49 0.1 169);
+  --pass-800: oklch(0.4 0.085 169);
+  --pass-900: oklch(0.32 0.075 169);
+
+  /* warn */
+  --warn-100: oklch(0.96 0.045 73);
+  --warn-200: oklch(0.92 0.085 73);
+  --warn-300: oklch(0.875 0.13 73);
+  --warn-400: oklch(0.845 0.165 73);
+  --warn-500: oklch(0.8 0.17 73);
+  --warn-600: oklch(0.72 0.165 73);
+  --warn-700: oklch(0.62 0.15 73);
+  --warn-800: oklch(0.51 0.13 73);
+  --warn-900: oklch(0.43 0.11 73);
+
+  /* error */
+  --error-100: oklch(0.95 0.045 20.85);
+  --error-200: oklch(0.9 0.09 20.85);
+  --error-300: oklch(0.83 0.15 20.85);
+  --error-400: oklch(0.72 0.21 20.85);
+  --error-500: oklch(0.6506 0.2361 20.85);
+  --error-600: oklch(0.56 0.21 20.85);
+  --error-700: oklch(0.47 0.17 20.85);
+  --error-800: oklch(0.39 0.13 20.85);
+  --error-900: oklch(0.32 0.105 20.85);
+
+  /* info */
+  --info-100: oklch(0.96 0.03 264);
+  --info-200: oklch(0.9 0.08 264);
+  --info-300: oklch(0.8 0.16 264);
+  --info-400: oklch(0.68 0.22 264);
+  --info-500: oklch(0.59 0.251 264);
+  --info-600: oklch(0.5 0.23 264);
+  --info-700: oklch(0.4 0.18 264);
+  --info-800: oklch(0.32 0.14 264);
+  --info-900: oklch(0.25 0.1 264);
+
+  /* neutral */
+  --neutral-100: oklch(0.99 0 0);
+  --neutral-200: oklch(0.96 0 0);
+  --neutral-300: oklch(0.87 0 0);
+  --neutral-400: oklch(0.7 0 0);
+  --neutral-500: oklch(0.63 0 0);
+  --neutral-600: oklch(0.35 0 0);
+  --neutral-700: oklch(0.24 0 0);
+  --neutral-800: oklch(0.21 0 0);
+  --neutral-900: oklch(0.19 0 0);
+
+  /* primary Transparent */
+  --primary-trans-5: oklch(0.7 0.135 200 / 0.05);
+  --primary-trans-10: oklch(0.7 0.135 200 / 0.1);
+  --primary-trans-25: oklch(0.7 0.135 200 / 0.25);
+  --primary-trans-50: oklch(0.7 0.135 200 / 0.5);
+  --primary-trans-60: oklch(0.7 0.135 200 / 0.6);
+  --primary-trans-75: oklch(0.7 0.135 200 / 0.75);
+  --primary-trans-90: oklch(0.7 0.135 200 / 0.9);
+
+  /* pass Transparent */
+  --pass-trans-5: oklch(0.7 0.135 169 / 0.05);
+  --pass-trans-10: oklch(0.7 0.135 169 / 0.1);
+  --pass-trans-25: oklch(0.7 0.135 169 / 0.25);
+  --pass-trans-50: oklch(0.7 0.135 169 / 0.5);
+  --pass-trans-60: oklch(0.7 0.135 169 / 0.6);
+  --pass-trans-75: oklch(0.7 0.135 169 / 0.75);
+  --pass-trans-90: oklch(0.7 0.135 169 / 0.9);
+
+  /* warn Transparent */
+  --warn-trans-5: oklch(0.8 0.17 73 / 0.05);
+  --warn-trans-10: oklch(0.8 0.17 73 / 0.1);
+  --warn-trans-25: oklch(0.8 0.17 73 / 0.25);
+  --warn-trans-50: oklch(0.8 0.17 73 / 0.5);
+  --warn-trans-60: oklch(0.8 0.17 73 / 0.6);
+  --warn-trans-75: oklch(0.8 0.17 73 / 0.75);
+  --warn-trans-90: oklch(0.8 0.17 73 / 0.9);
+
+  /* error Transparent */
+  --error-trans-5: oklch(0.6506 0.2361 20.85 / 0.05);
+  --error-trans-10: oklch(0.6506 0.2361 20.85 / 0.1);
+  --error-trans-25: oklch(0.6506 0.2361 20.85 / 0.25);
+  --error-trans-50: oklch(0.6506 0.2361 20.85 / 0.5);
+  --error-trans-60: oklch(0.6506 0.2361 20.85 / 0.6);
+  --error-trans-75: oklch(0.6506 0.2361 20.85 / 0.75);
+  --error-trans-90: oklch(0.6506 0.2361 20.85 / 0.9);
+
+  /* info Transparent */
+  --info-trans-5: oklch(0.59 0.251 264 / 0.05);
+  --info-trans-10: oklch(0.59 0.251 264 / 0.1);
+  --info-trans-25: oklch(0.59 0.251 264 / 0.25);
+  --info-trans-50: oklch(0.59 0.251 264 / 0.5);
+  --info-trans-60: oklch(0.59 0.251 264 / 0.6);
+  --info-trans-75: oklch(0.59 0.251 264 / 0.75);
+  --info-trans-90: oklch(0.59 0.251 264 / 0.9);
+
+  /* neutral Transparent */
+  --neutral-trans-5: oklch(1 0 0 / 0.05);
+  --neutral-trans-10: oklch(1 0 0 / 0.1);
+  --neutral-trans-25: oklch(1 0 0 / 0.25);
+  --neutral-trans-50: oklch(1 0 0 / 0.5);
+  --neutral-trans-70: oklch(1 0 0 / 0.7);
+  --neutral-trans-75: oklch(1 0 0 / 0.75);
+  --neutral-trans-90: oklch(1 0 0 / 0.9);
+}
