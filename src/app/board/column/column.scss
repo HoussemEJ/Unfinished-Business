@@ -1,0 +1,19 @@
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 4px;
+  gap: 4px;
+
+  .ghostCard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1000;
+    background: red;
+    width: 240px;
+    touch-action: none !important;
+    will-change: transform;
+  }
+}
