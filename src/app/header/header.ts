@@ -3,7 +3,6 @@ import { Button } from '../components/button/button';
 import {
   LucideChevronRight,
   LucideChevronLeft,
-  LucideMinus,
   LucidePlus,
   LucideEllipsisVertical,
   LucideFolderInput,
@@ -12,7 +11,6 @@ import {
 } from '@lucide/angular';
 import { Input } from '../components/input/input';
 import { TaskController } from '../task-editor/task-controller';
-import { Tag } from '../components/tag/tag';
 import { Chip } from '../components/chip/chip';
 
 @Component({
@@ -20,11 +18,9 @@ import { Chip } from '../components/chip/chip';
   imports: [
     Button,
     Input,
-    Tag,
     Chip,
     LucideChevronRight,
     LucideChevronLeft,
-    LucideMinus,
     LucidePlus,
     LucideEllipsisVertical,
     LucideFolderInput,

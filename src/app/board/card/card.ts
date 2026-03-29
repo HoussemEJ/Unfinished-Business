@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
-import { LucideX, LucideDot } from '@lucide/angular';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { CardController } from '../column/card-controller';
 import { Tag } from '../../components/tag/tag';
 
@@ -20,7 +19,7 @@ export interface CardDto {
 
 @Component({
   selector: 'app-card',
-  imports: [LucideX, LucideDot, Tag],
+  imports: [Tag],
   templateUrl: './card.html',
   styleUrl: './card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
