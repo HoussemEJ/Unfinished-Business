@@ -30,20 +30,19 @@ lucide-icon {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--neutral-800);
+  background: var(--neutral-400);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--neutral-600);
+  background: var(--neutral-300);
   border-radius: 100px;
-  border: 2px solid var(--neutral-700);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--neutral-600);
+  background: var(--neutral-200);
 }

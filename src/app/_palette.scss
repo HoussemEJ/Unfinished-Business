@@ -1,14 +1,14 @@
 :root {
   /* primary */
-  --primary-100: oklch(0.945 0.045 200);
-  --primary-200: oklch(0.905 0.075 200);
-  --primary-300: oklch(0.865 0.09 200);
-  --primary-400: oklch(0.79 0.115 200);
-  --primary-500: oklch(0.7 0.16 200);
-  --primary-600: oklch(0.62 0.135 200);
-  --primary-700: oklch(0.5 0.1 200);
-  --primary-800: oklch(0.4 0.085 200);
-  --primary-900: oklch(0.32 0.075 200);
+  --prime-100: oklch(0.945 0.045 200);
+  --prime-200: oklch(0.905 0.075 200);
+  --prime-300: oklch(0.865 0.09 200);
+  --prime-400: oklch(0.79 0.115 200);
+  --prime-500: oklch(0.7 0.16 200);
+  --prime-600: oklch(0.62 0.135 200);
+  --prime-700: oklch(0.5 0.1 200);
+  --prime-800: oklch(0.4 0.085 200);
+  --prime-900: oklch(0.32 0.075 200);
 
   /* pass */
   --pass-100: oklch(0.945 0.045 169);
@@ -66,13 +66,13 @@
   --neutral-900: oklch(0.19 0 0);
 
   /* primary Transparent */
-  --primary-trans-5: oklch(0.7 0.135 200 / 0.05);
-  --primary-trans-10: oklch(0.7 0.135 200 / 0.1);
-  --primary-trans-25: oklch(0.7 0.135 200 / 0.25);
-  --primary-trans-50: oklch(0.7 0.135 200 / 0.5);
-  --primary-trans-60: oklch(0.7 0.135 200 / 0.6);
-  --primary-trans-75: oklch(0.7 0.135 200 / 0.75);
-  --primary-trans-90: oklch(0.7 0.135 200 / 0.9);
+  --prime-trans-5: oklch(0.7 0.135 200 / 0.05);
+  --prime-trans-10: oklch(0.7 0.135 200 / 0.1);
+  --prime-trans-25: oklch(0.7 0.135 200 / 0.25);
+  --prime-trans-50: oklch(0.7 0.135 200 / 0.5);
+  --prime-trans-60: oklch(0.7 0.135 200 / 0.6);
+  --prime-trans-75: oklch(0.7 0.135 200 / 0.75);
+  --prime-trans-90: oklch(0.7 0.135 200 / 0.9);
 
   /* pass Transparent */
   --pass-trans-5: oklch(0.7 0.135 169 / 0.05);

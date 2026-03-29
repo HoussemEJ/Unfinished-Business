@@ -1,1 +1,15 @@
-<ng-content></ng-content>
+<div class="title">
+  <div class="tag">
+    <span>{{ card().tag }}</span>
+    <svg [size]="16" lucideX></svg>
+  </div>
+  <span>{{ card().title }}</span>
+</div>
+
+<div class="desc">
+  {{ card().description }}
+</div>
+<div class="prio">
+  <div class="dot" [class]="priorityWeight[card().priority]"></div>
+  <span>{{ card().priority }}</span>
+</div>

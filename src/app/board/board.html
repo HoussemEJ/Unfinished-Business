@@ -1,8 +1,16 @@
-<div class="grid">
+<div class="grid" cdkDropListGroup>
   @for (title of titles; track $index) {
-    <div class="title">{{ title }}</div>
+    <div class="title">
+      <svg [size]="16" lucideChevronLeft></svg>
+      <span>{{ title }}</span>
+    </div>
   }
   @for (title of titles; track $index) {
-    <app-column></app-column>
+    <app-column
+      cdkDropList
+      [cdkDropListData]="mockBoardData[$index]"
+      [cards]="mockBoardData[$index]"
+      (cdkDropListDropped)="drop($event)"
+    ></app-column>
   }
 </div>

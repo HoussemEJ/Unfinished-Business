@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 12px;
+  font-size: 1rem;
+  color: var(--neutral-700);
+  background-color: #d8d8d8;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  min-height: 32px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  &.prime {
+    color: var(--neutral-200);
+    background-color: var(--prime-500);
+  }
+
+  &.pass {
+    color: var(--neutral-200);
+    background-color: var(--pass-500);
+  }
+
+  &.warn {
+    color: var(--neutral-800);
+    background-color: var(--warn-500);
+  }
+
+  &.error {
+    color: var(--neutral-200);
+    background-color: var(--error-500);
+  }
+
+  &.info {
+    color: var(--neutral-200);
+    background-color: var(--info-500);
+  }
+}

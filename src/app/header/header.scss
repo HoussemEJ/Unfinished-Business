@@ -1,5 +1,27 @@
 :host {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   height: 180px;
-  background: #fff;
+  padding: 8px 8px 4px;
+  background: var(--neutral-100);
+
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--prime-500);
+  }
+
+  .row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 4px;
+
+    .new {
+      margin-left: auto;
+    }
+  }
 }

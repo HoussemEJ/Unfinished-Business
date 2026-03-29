@@ -1,3 +1,6 @@
-@for (card of cards; track $index) {
-  <app-card>{{ card }}</app-card>
+@for (card of cards(); track $index) {
+  <app-card cdkDrag [card]="card"
+    ><div class="card-placeholder" *cdkDragPlaceholder></div>
+    {{ card }}</app-card
+  >
 }
