@@ -4,24 +4,68 @@
   align-items: flex-start;
   justify-content: space-between;
   height: 180px;
-  padding: 8px 8px 4px;
   background: var(--neutral-100);
 
-  h1 {
-    font-size: 2.25rem;
-    font-weight: 600;
-    color: var(--prime-500);
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      color: var(--prime-500);
+    }
+
+    .theme-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--neutral-700);
+      background: #ececec;
+      padding: 8px;
+      border-radius: 1000px;
+      cursor: pointer;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--prime-500);
+      }
+    }
   }
 
-  .row {
+  .bar {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+    height: 120px;
     width: 100%;
-    gap: 4px;
+    gap: 8px;
+    padding: 8px;
+    background: #f7f7f7;
 
-    .new {
-      margin-left: auto;
+    .filters,
+    .row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+
+      .tags,
+      .actions {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+
+    .row {
+      justify-content: space-between;
     }
   }
 }

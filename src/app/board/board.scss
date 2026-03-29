@@ -10,19 +10,28 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     height: 100%;
     scrollbar-gutter: stable;
-    overflow-y: auto;
+    overflow-y: scroll;
 
     .title {
       position: sticky;
       display: flex;
-      gap: 2px;
+      gap: 8px;
       align-items: center;
       top: 0;
+      z-index: 5;
       padding: 4px;
       border-right: 1px solid var(--neutral-300);
       border-bottom: 1px solid var(--neutral-300);
       color: var(--neutral-700);
       background: #ececec;
+
+      .counter {
+        display: flex;
+        align-items: center;
+        background: var(--neutral-300);
+        padding: 0 8px;
+        border-radius: 2px;
+      }
 
       span {
         white-space: nowrap;
@@ -37,10 +46,6 @@
 
     app-column {
       border-right: 1px solid var(--neutral-300);
-
-      &:last-child {
-        border: none;
-      }
     }
   }
 }

@@ -7,20 +7,19 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
-import { LucideChevronLeft } from '@lucide/angular';
-import { CardDto, Priority } from './card/card';
+import { CardDto } from './card/card';
 import { CardController } from './column/card-controller';
 
 @Component({
   selector: 'app-board',
-  imports: [Column, CdkDropList, CdkDropListGroup, LucideChevronLeft],
+  imports: [Column, CdkDropList, CdkDropListGroup],
   templateUrl: './board.html',
   styleUrl: './board.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Board {
   private cardController = inject(CardController);
-  titles = ['Unfinished Business', 'Marinating', 'In Shrimp Posture', 'Finished'];
+  titles = ['Unfinished Business', 'Marinating', 'In Progress', 'Finished'];
   mockBoardData = this.cardController.mockBoardData;
 
   drop(event: CdkDragDrop<CardDto[]>) {

@@ -1,8 +1,5 @@
 <div class="title">
-  <div class="tag">
-    <span>{{ card().tag }}</span>
-    <svg [size]="16" lucideX></svg>
-  </div>
+  <app-tag [label]="card().tag" color="var(--prime-500)"></app-tag>
   <span>{{ card().title }}</span>
 </div>
 

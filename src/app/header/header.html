@@ -1,11 +1,32 @@
-<h1>Unfinished Business</h1>
-<div class="row">
-  <app-button><svg [size]="16" lucideChevronLeft></svg></app-button>
-  <app-button label="This week"></app-button>
-  <app-button><svg [size]="16" lucideChevronRight></svg></app-button>
-  <app-input></app-input>
-  <app-button><svg [size]="16" lucideEllipsisVertical></svg></app-button>
+<div class="head">
+  <h1>Unfinished Business</h1>
+  <div class="theme-icon">
+    <svg [size]="20" lucideMoon></svg>
+  </div>
+</div>
 
-  <app-button label="New" class="new" status="prime"><svg [size]="16" lucidePlus></svg></app-button>
-  <app-button status="prime"><svg [size]="16" lucideSettings></svg></app-button>
+<div class="bar">
+  <div class="filters">
+    <app-button><svg [size]="20" lucideChevronLeft></svg></app-button>
+    <app-button label="Current"></app-button>
+    <app-button><svg [size]="20" lucideChevronRight></svg></app-button>
+    <app-input></app-input>
+    <app-button label="Filters"><svg [size]="20" lucideSlidersHorizontal></svg></app-button>
+  </div>
+
+  <div class="row">
+    <div class="tags">
+      <app-chip label="Web"></app-chip>
+      <app-chip label="3D"></app-chip>
+      <app-chip label="VR"></app-chip>
+      <app-chip label="Chill"></app-chip>
+    </div>
+    <div class="actions">
+      <app-button label="Create task" class="new" status="prime" (click)="openTaskEditor()"
+        ><svg [size]="20" lucidePlus></svg
+      ></app-button>
+      <app-button label="Export"><svg [size]="20" lucideFolderInput></svg></app-button>
+      <app-button><svg [size]="20" lucideEllipsisVertical></svg></app-button>
+    </div>
+  </div>
 </div>

@@ -56,6 +56,30 @@ export class CardController {
         tag: 'Web',
         priority: Priority.Chill,
       },
+      {
+        id: '3d8b4e7a-1f2c-4b5d-9c8e-a1b2csd4e5f6',
+        title: 'Update Three.js',
+        description:
+          'Bump to the latest version and resolve all breaking changes. Check the migration guide specifically for the updated physical materials API and ensure our custom fragment shaders still compile without throwing console warnings.',
+        tag: 'Web',
+        priority: Priority.Chill,
+      },
+      {
+        id: '3d8b4e7a-1f2c-4b5d-9c8e-a1bfc3d4e5f6',
+        title: 'Update Three.js',
+        description:
+          'Bump to the latest version and resolve all breaking changes. Check the migration guide specifically for the updated physical materials API and ensure our custom fragment shaders still compile without throwing console warnings.',
+        tag: 'Web',
+        priority: Priority.Chill,
+      },
+      {
+        id: '3d8b4e7a-1f2c-4b5s-9c8e-a1bfc3d4e5f6',
+        title: 'Update Three.js',
+        description:
+          'Bump to the latest version and resolve all breaking changes. Check the migration guide specifically for the updated physical materials API and ensure our custom fragment shaders still compile without throwing console warnings.',
+        tag: 'Web',
+        priority: Priority.Chill,
+      },
     ],
   ];
 

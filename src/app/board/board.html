@@ -1,7 +1,9 @@
 <div class="grid" cdkDropListGroup>
   @for (title of titles; track $index) {
     <div class="title">
-      <svg [size]="16" lucideChevronLeft></svg>
+      <div class="counter">
+        {{ mockBoardData[$index].length }}
+      </div>
       <span>{{ title }}</span>
     </div>
   }

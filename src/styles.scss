@@ -14,6 +14,7 @@
   user-select: text;
   caret-color: transparent;
   box-sizing: border-box;
+  user-select: none;
 }
 
 html,
@@ -35,14 +36,31 @@ lucide-icon {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--neutral-400);
+  background: var(--neutral-300);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--neutral-300);
+  background: #a7a7a7;
   border-radius: 100px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--neutral-200);
+  background: #a7a7a7;
+}
+
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+}
+
+.modal-panel {
+  background-color: var(--neutral-200);
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  outline: none;
+
+  :focus-visible {
+    outline: none;
+  }
 }

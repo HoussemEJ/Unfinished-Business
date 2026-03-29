@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
 import { LucideX, LucideDot } from '@lucide/angular';
 import { CardController } from '../column/card-controller';
+import { Tag } from '../../components/tag/tag';
 
 export enum Priority {
   Chill = 'Chill',
@@ -19,7 +20,7 @@ export interface CardDto {
 
 @Component({
   selector: 'app-card',
-  imports: [LucideX, LucideDot],
+  imports: [LucideX, LucideDot, Tag],
   templateUrl: './card.html',
   styleUrl: './card.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
