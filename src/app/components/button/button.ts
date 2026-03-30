@@ -10,9 +10,12 @@ export type Status = 'prime' | 'pass' | 'warn' | 'error' | 'info';
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '[class]': 'status()',
+    '[class.disabled]': 'disabled()',
+    '[attr.disabled]': 'disabled() ? true : null',
   },
 })
 export class Button {
   label = input<string>('');
   status = input<Status>();
+  disabled = input<boolean>(false);
 }

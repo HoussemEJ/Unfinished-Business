@@ -1,1 +1,10 @@
-<svg [size]="16" lucideSearch></svg> <input type="text" placeholder="Search..." />
+<ng-content select="prefix"></ng-content>
+<input
+  type="text"
+  [placeholder]="placeholder()"
+  [value]="value()"
+  [disabled]="disabled()"
+  (input)="handleInput($event)"
+  (blur)="onTouched()"
+/>
+<ng-content select="suffix"></ng-content>

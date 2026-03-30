@@ -8,6 +8,7 @@ import {
   LucideFolderInput,
   LucideMoon,
   LucideSlidersHorizontal,
+  LucideSearch,
 } from '@lucide/angular';
 import { Input } from '../components/input/input';
 import { TaskController } from '../task-editor/task-controller';
@@ -26,6 +27,7 @@ import { Chip } from '../components/chip/chip';
     LucideFolderInput,
     LucideMoon,
     LucideSlidersHorizontal,
+    LucideSearch,
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
