@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  gap: 16px;
   padding: 16px;
   height: 100%;
   width: 80px;
@@ -35,5 +36,25 @@
     cursor: pointer;
     transition: all 0.25s ease;
     box-sizing: border-box;
+  }
+
+  .tag-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+
+    .tag {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  }
+
+  .indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
   }
 }

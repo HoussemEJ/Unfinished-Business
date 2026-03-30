@@ -1,3 +1,13 @@
 <div class="menu-icon" (click)="toggle()">
   <svg [size]="28" lucideKanban></svg>
 </div>
+@if (open()) {
+  <div class="tag-list">
+    @for (tag of tagList; track $index) {
+      <div class="tag">
+        <div class="indicator" [style.background]="tag.color"></div>
+        <span>{{ tag.title }}</span>
+      </div>
+    }
+  </div>
+}

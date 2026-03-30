@@ -8,7 +8,7 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { CardDto } from './card/card';
-import { CardController } from './column/card-controller';
+import { CardController } from './card/card-controller';
 
 @Component({
   selector: 'app-board',

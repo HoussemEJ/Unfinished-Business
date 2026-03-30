@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
-import { CardController } from '../column/card-controller';
+import { CardController } from './card-controller';
 import { Tag } from '../../components/tag/tag';
 
 export enum Priority {
