@@ -1,11 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { LucideKanban } from '@lucide/angular';
-import { TagController } from '../components/tag/tag-controller';
-
-export interface ITag {
-  title: string;
-  color: string;
-}
+import { TagController } from '../services/tag-controller';
 
 @Component({
   selector: 'app-panel',
@@ -19,9 +14,9 @@ export interface ITag {
 })
 export class Panel {
   private tagController = inject(TagController);
-  protected open = signal(false);
 
-  tagList = this.tagController.tagList;
+  protected open = signal(false);
+  protected tagList = this.tagController.tagList;
 
   toggle() {
     this.open.update((v) => !v);

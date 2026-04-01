@@ -3,10 +3,10 @@
 </div>
 @if (open()) {
   <div class="tag-list">
-    @for (tag of tagList; track $index) {
+    @for (tag of tagList(); track $index) {
       <div class="tag">
         <div class="indicator" [style.background]="tag.color"></div>
-        <span>{{ tag.title }}</span>
+        <span>{{ tag.name }}</span>
       </div>
     }
   </div>

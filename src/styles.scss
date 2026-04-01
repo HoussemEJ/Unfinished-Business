@@ -1,4 +1,4 @@
-@use 'app/palette';
+@use 'app/styles/palette';
 
 * {
   text-decoration: none;
@@ -63,4 +63,28 @@ lucide-icon {
   :focus-visible {
     outline: none;
   }
+}
+
+.decoy-card {
+  position: fixed;
+  margin: 0;
+  z-index: 9998;
+  pointer-events: none;
+  box-shadow:
+    0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.placeholder-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--prime-500);
+  border: 2px dashed var(--prime-800);
+  min-height: 140px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+  will-change: transform;
 }

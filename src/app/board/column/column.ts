@@ -1,14 +1,16 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { Card, CardDto } from '../card/card';
-import { CdkDrag, CdkDragPlaceholder } from '@angular/cdk/drag-drop';
+import { Card } from '../card/card';
+import { DragInstigator } from '../../drag/drag-instigator';
+import { ICard, IColumn } from '../../model';
 
 @Component({
   selector: 'app-column',
-  imports: [Card, CdkDrag, CdkDragPlaceholder],
+  imports: [Card, DragInstigator],
   templateUrl: './column.html',
   styleUrl: './column.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Column {
-  cards = input<CardDto[]>();
+  column = input.required<IColumn>();
+  cards = input<ICard[]>();
 }

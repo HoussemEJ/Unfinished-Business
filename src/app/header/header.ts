@@ -11,7 +11,7 @@ import {
   LucideSearch,
 } from '@lucide/angular';
 import { Input } from '../components/input/input';
-import { TaskController } from '../task-editor/task-controller';
+import { TaskController } from '../services/task-controller';
 import { Chip } from '../components/chip/chip';
 
 @Component({

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { LucideX } from '@lucide/angular';
+import { ITag } from '../../model';
 
 @Component({
   selector: 'app-tag',
@@ -8,10 +9,9 @@ import { LucideX } from '@lucide/angular';
   styleUrl: './tag.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[style.background-color]': 'color()',
+    '[style.background-color]': 'tag().color',
   },
 })
 export class Tag {
-  label = input<string>();
-  color = input<string>();
+  tag = input.required<ITag>();
 }

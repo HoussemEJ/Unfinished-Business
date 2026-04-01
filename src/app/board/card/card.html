@@ -1,12 +1,12 @@
 <div class="title">
-  <app-tag [label]="card().tag" color="var(--prime-500)"></app-tag>
+  <app-tag [tag]="card().tag"></app-tag>
   <span>{{ card().title }}</span>
 </div>
 
 <div class="desc">
   {{ card().description }}
 </div>
-<div class="prio">
-  <div class="dot" [class]="priorityWeight[card().priority]"></div>
+<div class="priority">
+  <div class="dot" [class]="'p-' + card().priority"></div>
   <span>{{ card().priority }}</span>
 </div>

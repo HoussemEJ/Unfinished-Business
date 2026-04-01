@@ -5,6 +5,7 @@
   overflow: hidden;
 
   .grid {
+    position: relative;
     display: grid;
     grid-template-rows: 36px auto;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -42,10 +43,6 @@
       &:last-child {
         border: none;
       }
-    }
-
-    app-column {
-      border-right: 1px solid var(--neutral-300);
     }
   }
 }

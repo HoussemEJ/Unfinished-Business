@@ -1,6 +1,3 @@
-@for (card of cards(); track $index) {
-  <app-card cdkDrag [card]="card"
-    ><div class="card-placeholder" *cdkDragPlaceholder></div>
-    {{ card }}</app-card
-  >
+@for (card of cards(); track card.id) {
+  <app-card dragInstigator [card]="card"></app-card>
 }

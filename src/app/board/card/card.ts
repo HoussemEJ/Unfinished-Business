@@ -1,21 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
-import { CardController } from './card-controller';
+import { CardController } from '../../services/card-controller';
 import { Tag } from '../../components/tag/tag';
-
-export enum Priority {
-  Chill = 'Chill',
-  Emshy = 'Emshy Emshy',
-  GettingNervous = 'Getting Nervous',
-  AssOnFire = 'Ass On Fire',
-}
-
-export interface CardDto {
-  id: string;
-  title: string;
-  description: string;
-  tag: string;
-  priority: Priority;
-}
+import { ICard } from '../../model';
 
 @Component({
   selector: 'app-card',
@@ -30,18 +16,15 @@ export interface CardDto {
 })
 export class Card {
   protected cardController = inject(CardController);
-  card = input.required<CardDto>();
-  active = computed<boolean>(() => this.cardController.activeCards().has(this.card().id));
 
-  priorityWeight: Record<string, string> = {
-    [Priority.Chill]: 'p-0',
-    [Priority.Emshy]: 'p-1',
-    [Priority.GettingNervous]: 'p-2',
-    [Priority.AssOnFire]: 'p-3',
-  };
+  card = input.required<ICard>();
+  protected active = computed<boolean>(() => this.cardController.activeCards().has(this.card().id));
 
-  toggleActive() {
-    if (!this.active()) this.cardController.addCard(this.card().id);
-    else this.cardController.removeCard(this.card().id);
+  protected toggleActive() {
+    if (this.active()) {
+      this.cardController.removeActiveCard(this.card().id);
+    } else {
+      this.cardController.addActiveCard(this.card().id);
+    }
   }
 }

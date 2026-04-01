@@ -1,18 +1,18 @@
-<div class="grid" cdkDropListGroup>
+<div class="grid">
   @for (title of titles; track $index) {
     <div class="title">
       <div class="counter">
-        {{ mockBoardData[$index].length }}
+        {{ columns()[$index].length }}
       </div>
       <span>{{ title }}</span>
     </div>
   }
   @for (title of titles; track $index) {
     <app-column
-      cdkDropList
-      [cdkDropListData]="mockBoardData[$index]"
-      [cards]="mockBoardData[$index]"
-      (cdkDropListDropped)="drop($event)"
+      [attr.data-column-id]="$index"
+      dropTarget
+      [column]="{ id: $index, title: title }"
+      [cards]="columns()[$index]"
     ></app-column>
   }
 </div>
