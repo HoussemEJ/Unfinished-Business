@@ -15,7 +15,6 @@ export class DragInstigator {
   card = input.required<ICard>();
 
   protected onPointerDown(event: PointerEvent): void {
-    console.log('Pointer Down on:', this.card().title);
     this.dragHandler.dragStart(event, this.el.nativeElement, this.card().id, this.card().column);
   }
 }

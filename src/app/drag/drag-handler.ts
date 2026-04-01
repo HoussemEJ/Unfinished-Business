@@ -1,9 +1,12 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
+import { CardController } from '../services/card-controller';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DragHandler {
+  private cardController = inject(CardController);
+
   instigator = signal<string | null>(null);
   source = signal<number | null>(null);
   target = signal<number | null>(null);
@@ -18,21 +21,33 @@ export class DragHandler {
     this.instigator.set(instigator);
     this.instigatorEl = el;
 
+    this.cardController.hideCard(instigator);
+
     window.addEventListener('pointerup', this.handlePointerUp);
     window.addEventListener('pointermove', this.handlePointerMove);
   }
 
-  drop(target: number | null): void {
+  drop(): void {
+    const instigator = this.instigator();
+    const target = this.target();
+
+    if (instigator == null) throw new Error('Instigator is invalid.');
     if (target == null) throw new Error('Target is invalid.');
+
+    this.cardController.moveCard(instigator, target);
     this.reset();
   }
 
   private handlePointerUp = (event: PointerEvent): void => {
-    if (this.target() !== null) {
-      console.log('Dropped!', this.target());
-      this.drop(this.target());
+    const instigator = this.instigator();
+    const source = this.source();
+    const target = this.target();
+
+    if (target !== null) {
+      this.drop();
     } else {
       console.warn('Drop out of bound!');
+      if (instigator != null && source != null) this.cardController.showCard(instigator, source);
       this.reset();
     }
   };

@@ -20,8 +20,9 @@ export class CardController {
     const cards = this.allCards();
     const columns: ICard[][] = [[], [], [], []];
 
-    cards.forEach((card) => columns[card.column].push(card));
-    console.log(columns);
+    cards.forEach((card) => {
+      if (card.column > -1) columns[card.column].push(card);
+    });
 
     return columns.map((column) => column.sort((a, b) => a.order.localeCompare(b.order)));
   });
@@ -49,5 +50,31 @@ export class CardController {
     }
   }
 
-  moveCard(cardId: string, source: number, target: number) {}
+  showCard(id: string, source: number): void {
+    const cards = this.allCards();
+    const card = cards.find((card) => card.id === id);
+    if (!card) return;
+
+    const updatedCard: ICard = { ...card, column: source };
+    this.allCards.set([...cards.filter((card) => card.id !== id), updatedCard]);
+  }
+
+  hideCard(id: string): void {
+    const cards = this.allCards();
+    const card = cards.find((card) => card.id === id);
+    if (!card) return;
+
+    const updatedCard: ICard = { ...card, column: -1 };
+    this.allCards.set([...cards.filter((card) => card.id !== id), updatedCard]);
+  }
+
+  moveCard(id: string, target: number): void {
+    const cards = this.allCards();
+    const card = cards.find((card) => card.id === id);
+    if (!card) return;
+
+    const updatedCard: ICard = { ...card, column: target };
+
+    this.allCards.set([...cards.filter((card) => card.id !== id), updatedCard]);
+  }
 }
