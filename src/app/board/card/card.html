@@ -8,5 +8,5 @@
 </div>
 <div class="priority">
   <div class="dot" [class]="'p-' + card().priority"></div>
-  <span>{{ card().priority }}</span>
+  <span>{{ card().priority | priorityLabel }}</span>
 </div>

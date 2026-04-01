@@ -12,7 +12,7 @@ export class DropTarget {
   private dragHandler = inject(DragHandler);
   column = input.required<IColumn>();
 
-  setTarget() {
+  protected setTarget(): void {
     this.dragHandler.target.set(this.column().id);
   }
 }

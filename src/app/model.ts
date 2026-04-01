@@ -1,13 +1,13 @@
 export enum Priority {
-  Chill = 0,
-  Emshy = 1,
-  GettingNervous = 2,
-  AssOnFire = 3,
+  Low = 0,
+  Normal = 1,
+  Medium = 2,
+  High = 3,
 }
 
 export interface IColumn {
   id: number;
-  title: string;
+  name: string;
 }
 
 export interface ICard {

@@ -12,13 +12,17 @@ export class CardController {
   constructor() {
     // TODO
     this.allCards.set(this.dataController.cards);
+    this.columnHeaders.set(this.dataController.columnHeaders);
   }
 
+  columnHeaders = signal<string[]>([]);
   columns = computed(() => {
     const cards = this.allCards();
     const columns: ICard[][] = [[], [], [], []];
 
     cards.forEach((card) => columns[card.column].push(card));
+    console.log(columns);
+
     return columns.map((column) => column.sort((a, b) => a.order.localeCompare(b.order)));
   });
 
@@ -44,4 +48,6 @@ export class CardController {
       });
     }
   }
+
+  moveCard(cardId: string, source: number, target: number) {}
 }

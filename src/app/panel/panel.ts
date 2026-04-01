@@ -18,7 +18,7 @@ export class Panel {
   protected open = signal(false);
   protected tagList = this.tagController.tagList;
 
-  toggle() {
+  toggle(): void {
     this.open.update((v) => !v);
   }
 }

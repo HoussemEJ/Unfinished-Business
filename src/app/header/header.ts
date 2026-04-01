@@ -36,7 +36,7 @@ import { Chip } from '../components/chip/chip';
 export class Header {
   private taskController = inject(TaskController);
 
-  protected openTaskEditor() {
+  protected openTaskEditor(): void {
     this.taskController.openEditor();
   }
 }

@@ -13,6 +13,6 @@ import { DropTarget } from '../drag/drop-target';
 export class Board {
   private cardController = inject(CardController);
 
-  titles = ['Unfinished Business', 'Marinating', 'In Progress', 'Finished'];
+  columnHeaders = this.cardController.columnHeaders;
   columns = this.cardController.columns;
 }

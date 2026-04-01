@@ -5,6 +5,8 @@ import { Priority } from '../model';
   providedIn: 'root',
 })
 export class DataController {
+  columnHeaders = ['Unfinished Business', 'Marinating', 'In Progress', 'Finished'];
+
   cards = [
     {
       id: 'e02b84eb-9a25-4fc1-9b65-6825eec56c7d',
@@ -14,7 +16,7 @@ export class DataController {
         name: 'Web',
         color: 'var(--prime-500)',
       },
-      priority: Priority.AssOnFire,
+      priority: Priority.High,
       column: 0,
       order: 'm',
     },
@@ -26,7 +28,7 @@ export class DataController {
         name: '3D Printing',
         color: 'var(--error-500)',
       },
-      priority: Priority.GettingNervous,
+      priority: Priority.Medium,
       column: 0,
       order: 't',
     },
@@ -38,7 +40,7 @@ export class DataController {
         name: '3D',
         color: 'var(--warn-500)',
       },
-      priority: Priority.Chill,
+      priority: Priority.Low,
       column: 1,
       order: 'm',
     },
@@ -50,7 +52,7 @@ export class DataController {
         name: 'VR',
         color: 'var(--info-500)',
       },
-      priority: Priority.Emshy,
+      priority: Priority.Normal,
       column: 2,
       order: 'm',
     },
@@ -62,7 +64,7 @@ export class DataController {
         name: 'Web',
         color: 'var(--prime-500)',
       },
-      priority: Priority.Chill,
+      priority: Priority.Normal,
       column: 3,
       order: 'm',
     },
@@ -86,4 +88,6 @@ export class DataController {
       color: 'var(--info-500)',
     },
   ];
+
+  priorities = ['Chill', 'Emshy Emshy', 'Getting Nervous', 'Ass On Fire'];
 }

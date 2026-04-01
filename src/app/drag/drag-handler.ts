@@ -10,7 +10,7 @@ export class DragHandler {
 
   private instigatorEl: HTMLElement | null = null;
 
-  dragStart(event: PointerEvent, el: HTMLElement, instigator: string, source: number) {
+  dragStart(event: PointerEvent, el: HTMLElement, instigator: string, source: number): void {
     if (instigator == null) throw new Error('Instigator is invalid.');
     if (source == null) throw new Error('Source is invalid.');
 
@@ -22,12 +22,12 @@ export class DragHandler {
     window.addEventListener('pointermove', this.handlePointerMove);
   }
 
-  drop(target: number | null) {
+  drop(target: number | null): void {
     if (target == null) throw new Error('Target is invalid.');
     this.reset();
   }
 
-  private handlePointerUp = (event: PointerEvent) => {
+  private handlePointerUp = (event: PointerEvent): void => {
     if (this.target() !== null) {
       console.log('Dropped!', this.target());
       this.drop(this.target());
@@ -37,11 +37,11 @@ export class DragHandler {
     }
   };
 
-  private handlePointerMove = (event: PointerEvent) => {
+  private handlePointerMove = (event: PointerEvent): void => {
     console.log('Moving');
   };
 
-  reset() {
+  reset(): void {
     window.removeEventListener('pointermove', this.handlePointerMove);
     window.removeEventListener('pointerup', this.handlePointerUp);
 

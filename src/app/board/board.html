@@ -1,17 +1,16 @@
 <div class="grid">
-  @for (title of titles; track $index) {
-    <div class="title">
+  @for (header of columnHeaders(); track $index) {
+    <div class="header">
       <div class="counter">
         {{ columns()[$index].length }}
       </div>
-      <span>{{ title }}</span>
+      <span>{{ header }}</span>
     </div>
   }
-  @for (title of titles; track $index) {
+  @for (header of columnHeaders(); track $index) {
     <app-column
-      [attr.data-column-id]="$index"
       dropTarget
-      [column]="{ id: $index, title: title }"
+      [column]="{ id: $index, name: header }"
       [cards]="columns()[$index]"
     ></app-column>
   }
