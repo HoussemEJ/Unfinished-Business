@@ -10,8 +10,7 @@ import { ICard } from '../model';
 })
 export class DragInstigator {
   private dragHandler = inject(DragHandler);
-  private el = inject<ElementRef<HTMLElement>>(ElementRef);
-
+  el = inject<ElementRef<HTMLElement>>(ElementRef);
   card = input.required<ICard>();
 
   protected onPointerDown(event: PointerEvent): void {
