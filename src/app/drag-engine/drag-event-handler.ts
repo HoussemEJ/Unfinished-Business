@@ -37,17 +37,23 @@ export class DragEventHandler {
 
   private handlePointerUp = async (event: PointerEvent): Promise<void> => {
     this.removeEventListeners();
-    await this.controller.animateDecoyToPlaceholder();
 
-    const instigator = this.state.instigator();
-    const source = this.state.source();
-    const target = this.state.target();
+    try {
+      await this.controller.animateDecoyToPlaceholder();
+    } catch (e) {
+      console.error('Animation failed, cleaning up anyway.', e);
+    } finally {
+      const instigator = this.state.instigator();
+      const source = this.state.source();
+      const target = this.state.target();
 
-    this.controller.toggleInstigator();
-    this.state.reset();
+      this.controller.toggleInstigator();
 
-    if (target !== null && source !== target && instigator) {
-      this.cardController.moveCard(instigator, target);
+      this.state.reset();
+
+      if (target !== null && source !== target && instigator) {
+        this.cardController.moveCard(instigator, target);
+      }
     }
   };
 
@@ -60,8 +66,6 @@ export class DragEventHandler {
     if (newTarget !== null && newTarget !== currentTarget) {
       this.state.target.set(newTarget);
       this.controller.repositionPlaceholder(newTarget);
-
-      console.log(`Target changed to: ${newTarget}`);
     }
   };
 

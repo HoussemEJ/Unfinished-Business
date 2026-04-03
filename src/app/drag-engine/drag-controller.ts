@@ -62,31 +62,6 @@ export class DragController {
     decoy.style.transform = `translate3d(${location.x}px, ${location.y}px ,0)`;
   }
 
-  animateDecoyToPlaceholder(): Promise<void> {
-    return new Promise((resolve) => {
-      const decoy = this.state.decoyEl;
-      const placeholder = this.state.placeholderEl;
-
-      if (!decoy || !placeholder) {
-        resolve();
-        return;
-      }
-
-      const pRect = placeholder.getBoundingClientRect();
-
-      decoy.style.transition = 'transform 0.2s cubic-bezier(0.2, 0, 0, 1)';
-      decoy.style.transform = `translate3d(${pRect.left}px, ${pRect.top}px, 0)`;
-
-      decoy.addEventListener(
-        'transitionend',
-        () => {
-          resolve();
-        },
-        { once: true },
-      );
-    });
-  }
-
   repositionPlaceholder(target: number): void {
     const { instigatorEl, decoyEl, placeholderEl, registry } = this.state;
     const targetBoundary = registry.get(target);
@@ -108,6 +83,29 @@ export class DragController {
 
     targetBoundary.el.appendChild(newPlaceholder);
     this.state.placeholderEl = newPlaceholder;
+  }
+
+  async animateDecoyToPlaceholder(): Promise<void> {
+    const { decoyEl, placeholderEl } = this.state;
+    if (!decoyEl || !placeholderEl) return;
+
+    const pRect = placeholderEl.getBoundingClientRect();
+
+    const animation = decoyEl.animate(
+      [
+        { transform: decoyEl.style.transform },
+        { transform: `translate3d(${pRect.left}px, ${pRect.top}px, 0)` },
+      ],
+      {
+        duration: 200,
+        easing: 'cubic-bezier(0.2, 0, 0, 1)',
+        fill: 'forwards',
+      },
+    );
+
+    return animation.finished.then(() => {
+      decoyEl.style.transform = `translate3d(${pRect.left}px, ${pRect.top}px, 0)`;
+    });
   }
 
   toggleInstigator(): void {
