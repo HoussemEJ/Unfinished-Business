@@ -25,7 +25,6 @@ export class DragEventHandler {
     const offsetX = event.clientX - rect.left;
     const offsetY = event.clientY - rect.top;
 
-    // Source === Target on init
     this.state.init(instigatorEl, instigator, source, source, offsetX, offsetY);
 
     this.controller.spawnDecoy(event);
@@ -40,15 +39,14 @@ export class DragEventHandler {
 
     try {
       await this.controller.animateDecoyToPlaceholder();
-    } catch (e) {
-      console.error('Animation failed, cleaning up anyway.', e);
+    } catch (error) {
+      console.error('Animation failed, cleaning up anyway.', error);
     } finally {
       const instigator = this.state.instigator();
       const source = this.state.source();
       const target = this.state.target();
 
       this.controller.toggleInstigator();
-
       this.state.reset();
 
       if (target !== null && source !== target && instigator) {
@@ -60,22 +58,24 @@ export class DragEventHandler {
   private handlePointerMove = (event: PointerEvent): void => {
     this.controller.moveDecoy(event);
 
-    const newTarget = this.controller.checkCollisions();
+    const target = this.controller.getIntersectingTarget();
     const currentTarget = this.state.target();
 
-    if (newTarget !== null && newTarget !== currentTarget) {
-      this.state.target.set(newTarget);
-      this.controller.repositionPlaceholder(newTarget);
+    if (target !== null && target !== currentTarget) {
+      this.state.target.set(target);
+      this.controller.movePlaceholder(target);
     }
   };
 
   private setEventListeners(): void {
     window.addEventListener('pointermove', this.handlePointerMove);
     window.addEventListener('pointerup', this.handlePointerUp);
+    window.addEventListener('pointerdown', this.handlePointerUp);
   }
 
   private removeEventListeners(): void {
     window.removeEventListener('pointermove', this.handlePointerMove);
     window.removeEventListener('pointerup', this.handlePointerUp);
+    window.removeEventListener('pointerdown', this.handlePointerUp);
   }
 }

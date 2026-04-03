@@ -2,8 +2,6 @@ import { inject, Injectable } from '@angular/core';
 import { DragState } from './drag-state';
 import { getIntersectingTarget } from './drag-physics';
 
-type Animatable = HTMLElement & { animate: { enter?: string; leave?: string } };
-
 @Injectable({
   providedIn: 'root',
 })
@@ -62,7 +60,7 @@ export class DragController {
     decoy.style.transform = `translate3d(${location.x}px, ${location.y}px ,0)`;
   }
 
-  repositionPlaceholder(target: number): void {
+  movePlaceholder(target: number): void {
     const { instigatorEl, decoyEl, placeholderEl, registry } = this.state;
     const targetBoundary = registry.get(target);
 
@@ -90,7 +88,6 @@ export class DragController {
     if (!decoyEl || !placeholderEl) return;
 
     const pRect = placeholderEl.getBoundingClientRect();
-
     const animation = decoyEl.animate(
       [
         { transform: decoyEl.style.transform },
@@ -115,7 +112,7 @@ export class DragController {
     instigator.style.display = instigator.style.display === 'none' ? 'flex' : 'none';
   }
 
-  checkCollisions(): number | null {
+  getIntersectingTarget(): number | null {
     const decoy = this.state.decoyEl;
     if (!decoy) return null;
 
