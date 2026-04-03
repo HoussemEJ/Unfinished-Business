@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Column } from './column/column';
 import { CardController } from '../services/card-controller';
-import { DropTarget } from '../drag/drop-target';
+import { DropTarget } from '../drag-engine/drop-target';
 
 @Component({
   selector: 'app-board',

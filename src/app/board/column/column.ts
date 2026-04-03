@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Card } from '../card/card';
-import { DragInstigator } from '../../drag/drag-instigator';
+import { DragInstigator } from '../../drag-engine/drag-instigator';
 import { ICard, IColumn } from '../../model';
 
 @Component({

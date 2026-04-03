@@ -64,17 +64,16 @@ lucide-icon {
     outline: none;
   }
 }
-
-.placeholder-card {
+.drag-placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--prime-500);
   border: 2px dashed var(--prime-800);
-  min-height: 140px;
   border-radius: 2px;
   box-sizing: border-box;
+  z-index: 1;
+  pointer-events: none;
   transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
   will-change: transform;
-  pointer-events: none;
 }
