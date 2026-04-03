@@ -64,6 +64,7 @@ lucide-icon {
     outline: none;
   }
 }
+
 .drag-placeholder {
   display: flex;
   align-items: center;
@@ -75,5 +76,4 @@ lucide-icon {
   z-index: 1;
   pointer-events: none;
   transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
-  will-change: transform;
 }

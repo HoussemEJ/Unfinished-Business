@@ -10,6 +10,7 @@
   box-sizing: border-box;
   user-select: none;
   z-index: 2;
+  touch-action: none;
 
   &.active {
     border-color: var(--prime-500);

@@ -51,13 +51,16 @@ export class CardController {
   }
 
   moveCard(id: string, target: number): void {
-    const cards = this.allCards();
-    const card = cards.find((card) => card.id === id);
-    if (!card) return;
+    this.allCards.update((cards) => {
+      const cardIndex = cards.findIndex((c) => c.id === id);
+      if (cardIndex === -1 || cards[cardIndex].column === target) return cards;
 
-    if (card.column === target) return;
-    const updatedCard: ICard = { ...card, column: target };
+      const newCards = [...cards];
+      const [movedCard] = newCards.splice(cardIndex, 1);
+      movedCard.column = target;
+      newCards.push(movedCard);
 
-    this.allCards.set([...cards.filter((card) => card.id !== id), updatedCard]);
+      return newCards;
+    });
   }
 }
